@@ -19,9 +19,9 @@ See [action.yml](action.yml)
 ```yaml
 steps:
 - uses: actions/checkout@v4
-- uses: actions/setup-python@v5
+- uses: Quansight-Labs/setup-python@v5
   with:
-    python-version: '3.13' 
+    python-version: '3.13t'  # Use free-threaded version
 - run: python my_script.py
 ```
 
@@ -29,9 +29,9 @@ steps:
 ```yaml
 steps:
 - uses: actions/checkout@v4
-- uses: actions/setup-python@v5 
+- uses: Quansight-Labs/setup-python@v5
   with:
-    python-version: 'pypy3.10' 
+    python-version: 'pypy3.10'
 - run: python my_script.py
 ```
 
@@ -39,9 +39,9 @@ steps:
 ```yaml
 steps:
 - uses: actions/checkout@v4
-- uses: actions/setup-python@v5 
+- uses: Quansight-Labs/setup-python@v5
   with:
-    python-version: 'graalpy-24.0' 
+    python-version: 'graalpy-24.0'
 - run: python my_script.py
 ```
 
@@ -54,6 +54,8 @@ For information regarding locally cached versions of Python or PyPy on GitHub ho
 ## Supported version syntax
 
 The `python-version` input supports the [Semantic Versioning Specification](https://semver.org/) and some special version notations (e.g. `semver ranges`, `x.y-dev syntax`, etc.), for detailed examples please refer to the section: [Using python-version input](docs/advanced-usage.md#using-the-python-version-input) of the [Advanced usage](docs/advanced-usage.md) guide.
+
+Additionally, this action supports free-threaded CPython distributions, using the `x.yt` syntax.
 
 ## Supported architectures
 
@@ -94,7 +96,7 @@ See examples of using `cache` and `cache-dependency-path` for `pipenv` and `poet
 - [Caching packages](docs/advanced-usage.md#caching-packages)
 - [Outputs and environment variables](docs/advanced-usage.md#outputs-and-environment-variables)
 - [Available versions of Python, PyPy and GraalPy](docs/advanced-usage.md#available-versions-of-python-pypy-and-graalpy)
-- [Hosted tool cache](docs/advanced-usage.md#hosted-tool-cache) 
+- [Hosted tool cache](docs/advanced-usage.md#hosted-tool-cache)
 - [Using `setup-python` with a self-hosted runner](docs/advanced-usage.md#using-setup-python-with-a-self-hosted-runner)
 - [Using `setup-python` on GHES](docs/advanced-usage.md#using-setup-python-on-ghes)
 - [Allow pre-releases](docs/advanced-usage.md#allow-pre-releases)
