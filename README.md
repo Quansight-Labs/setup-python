@@ -11,6 +11,26 @@ This action provides the following functionality for GitHub Actions users:
 - Optionally caching dependencies for pip, pipenv and poetry
 - Registering problem matchers for error output
 
+# Free-threaded Python Support
+
+This is a fork of the "official" setup-python GitHub Action. We made this
+available to allow setting up CI with free-threaded Python while we wait for
+official [upstream
+support](https://github.com/actions/setup-python/issues/771). Hopefully, [coming
+soon](https://github.com/actions/setup-python/issues/771#issuecomment-2490607417).
+
+## Caveats
+
+Since setup-python relies on the Python.org installers, the [limitations](https://github.com/python/cpython/issues/127294#issuecomment-2501787837) related to installing free-threaded Python on Windows are also present here.
+
+In particular, if you install both a free-threaded and standard build of Python
+(e.g. both versions `3.13` and `3.13t`) in the same Actions environment, only
+one of the specified versions [will end up installed on the
+runner](https://github.com/Quansight-Labs/setup-python/issues/5#issue-2714826484).
+
+To work around this limitation, we suggest ensuring that any CI runs using the
+free-threaded build on Windows only activate one Python version.
+
 ## Basic usage
 
 See [action.yml](action.yml)
