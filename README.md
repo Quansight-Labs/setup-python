@@ -5,6 +5,10 @@
 [![Validate PyPy e2e](https://github.com/actions/setup-python/actions/workflows/test-pypy.yml/badge.svg?branch=main)](https://github.com/actions/setup-python/actions/workflows/test-pypy.yml)
 [![e2e-cache](https://github.com/actions/setup-python/actions/workflows/e2e-cache.yml/badge.svg?branch=main)](https://github.com/actions/setup-python/actions/workflows/e2e-cache.yml)
 
+**25 March 2025 update: upstream actions/setup-python v5.5.0 now includes**
+**support for free-threaded CPython. Please use that instead of this fork.**
+
+
 This action provides the following functionality for GitHub Actions users:
 
 - Installing a version of Python or PyPy and (by default) adding it to the PATH
